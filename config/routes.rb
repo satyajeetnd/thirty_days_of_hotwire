@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'pages#kitchensink'
+
+  get 'multiple_select', to: 'pages#multiple_select'
+  resources :technologies, only: [:create]
+  resources :favourite_technologies, only: [:create, :destroy]
 end
